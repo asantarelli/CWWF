@@ -28,6 +28,16 @@ RESPONSABILIDAD POR USO
 =======================
 No me hago responsable, en absoluto, por los errores que puedan generarse por el uso de esta herramienta
 
+Soporte
+=======
+Por cualquier duda, consulta, o sugerencia:
+mail: asantarelli@sdigitales.com.ar
+telegram: @aesantarelli
+
+Donaciones
+==========================
+Si esta herramienta te es de utilidad, puede dejar una pequeña contribución en mi cuenta de PayPal informacion@sdigitales.com.ar
+
 Historia de modificaciones
 ==========================
 v1.0 - 30-01-2021
