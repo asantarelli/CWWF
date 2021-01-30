@@ -1,0 +1,1244 @@
+[APPLICATION]
+VERSION 34
+TODO ABC ToDo
+DICTIONARY 'WindowFormatter.dct'
+PROCEDURE WindowFormatter
+[COMMON]
+FROM ABC
+MODIFIED '2018/06/02' '17:01:36'
+[PROMPTS]
+%ClassItem UNIQUE DEFAULT  ('ErrorManager', 'ErrorStatusManager', 'FileManager:Task', |
+  'FuzzyMatcher', 'INIManager', 'RelationManager:Task', 'Translator')
+%DefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 7
+WHEN  ('ErrorManager') ('ErrorClass')
+WHEN  ('ErrorStatusManager') ('ErrorStatusClass')
+WHEN  ('FileManager:Task') ('FileManager')
+WHEN  ('FuzzyMatcher') ('FuzzyClass')
+WHEN  ('INIManager') ('INIClass')
+WHEN  ('RelationManager:Task') ('RelationManager')
+WHEN  ('Translator') ('TranslatorClass')
+
+%ActualDefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 7
+WHEN  ('ErrorManager') ('')
+WHEN  ('ErrorStatusManager') ('')
+WHEN  ('FileManager:Task') ('')
+WHEN  ('FuzzyMatcher') ('')
+WHEN  ('INIManager') ('')
+WHEN  ('RelationManager:Task') ('')
+WHEN  ('Translator') ('')
+
+%ClassLines DEPEND %ClassItem MULTI DEFAULT TIMES 0
+
+%ProgramAuthor DEFAULT  ('SDigitales')
+%MessageDescription LONG  (1)
+%GlobalExternal LONG  (0)
+%ExternalSource DEFAULT  ('Dynamic Link Library (DLL)')
+%GenerateEmbedComments LONG  (0)
+%INIActive LONG  (0)
+%INIFile DEFAULT  ('Program Name.INI')
+%ININame DEFAULT  ('')
+%PreserveVars MULTI LONG  ()
+%PreserveVar DEPEND %PreserveVars DEFAULT TIMES 0
+
+%EnableRunTimeTranslator LONG  (1)
+%FuzzyMatchingEnabled LONG  (0)
+%IgnoreCase LONG  (1)
+%WordOnly LONG  (0)
+%WindowFrameDragging LONG  (1)
+%DefaultGenerate LONG  (0)
+%DefaultRILogout LONG  (1)
+%LockRecoverTime DEFAULT  ('10')
+%DefaultThreaded DEFAULT  ('Use File Setting')
+%DefaultCreate DEFAULT  ('Use File Setting')
+%DefaultExternal DEFAULT  ('None External')
+%DefaultExternalSource DEFAULT  ('')
+%DefaultExternalAPP LONG  (0)
+%DefaultExport LONG  (0)
+%DefaultOpenMode DEFAULT  ('Share')
+%DefaultUserAccess DEFAULT  ('Read/Write')
+%DefaultOtherAccess DEFAULT  ('Deny None')
+%DefaultLazyOpen LONG  (1)
+%OverrideGenerate DEPEND %File LONG TIMES 0
+
+%OverrideRILogout DEPEND %File DEFAULT TIMES 2
+WHEN  ('') ('Use Default')
+WHEN  ('Task') ('Use Default')
+
+%GlobalObject DEPEND %ClassItem DEFAULT TIMES 7
+WHEN  ('ErrorManager') ('YES')
+WHEN  ('ErrorStatusManager') ('YES')
+WHEN  ('FileManager:Task') ('YES')
+WHEN  ('FuzzyMatcher') ('YES')
+WHEN  ('INIManager') ('YES')
+WHEN  ('RelationManager:Task') ('YES')
+WHEN  ('Translator') ('YES')
+
+%ThisObjectName DEPEND %ClassItem DEFAULT TIMES 7
+WHEN  ('ErrorManager') ('GlobalErrors')
+WHEN  ('ErrorStatusManager') ('GlobalErrorsStatus')
+WHEN  ('FileManager:Task') ('Hide:Access:Task')
+WHEN  ('FuzzyMatcher') ('FuzzyMatcher')
+WHEN  ('INIManager') ('INIMgr')
+WHEN  ('RelationManager:Task') ('Hide:Relate:Task')
+WHEN  ('Translator') ('Translator')
+
+%UseDefaultABCBaseClass DEPEND %ClassItem LONG TIMES 7
+WHEN  ('ErrorManager') (1)
+WHEN  ('ErrorStatusManager') (1)
+WHEN  ('FileManager:Task') (1)
+WHEN  ('FuzzyMatcher') (1)
+WHEN  ('INIManager') (1)
+WHEN  ('RelationManager:Task') (1)
+WHEN  ('Translator') (1)
+
+%UseABCBaseClass DEPEND %ClassItem LONG TIMES 7
+WHEN  ('ErrorManager') (1)
+WHEN  ('ErrorStatusManager') (1)
+WHEN  ('FileManager:Task') (1)
+WHEN  ('FuzzyMatcher') (1)
+WHEN  ('INIManager') (1)
+WHEN  ('RelationManager:Task') (1)
+WHEN  ('Translator') (1)
+
+%ABCBaseClass DEPEND %ClassItem DEFAULT TIMES 7
+WHEN  ('ErrorManager') ('')
+WHEN  ('ErrorStatusManager') ('')
+WHEN  ('FileManager:Task') ('APIPrinterClass')
+WHEN  ('FuzzyMatcher') ('')
+WHEN  ('INIManager') ('')
+WHEN  ('RelationManager:Task') ('APIPrinterClass')
+WHEN  ('Translator') ('')
+
+%ExtBaseClass DEPEND %ClassItem DEFAULT TIMES 0
+
+%BaseClassIncludeFile DEPEND %ClassItem DEFAULT TIMES 0
+
+%DeriveFromBaseClass DEPEND %ClassItem LONG TIMES 7
+WHEN  ('ErrorManager') (0)
+WHEN  ('ErrorStatusManager') (0)
+WHEN  ('FileManager:Task') (0)
+WHEN  ('FuzzyMatcher') (0)
+WHEN  ('INIManager') (0)
+WHEN  ('RelationManager:Task') (0)
+WHEN  ('Translator') (0)
+
+%NewMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewMethodName DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewMethodPrototype DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewClassProperty DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataType DEPEND %NewClassPropertyItems DEFAULT TIMES 3
+WHEN  ('FuzzyMatcher')TIMES 0
+WHEN  ('INIManager')TIMES 0
+WHEN  ('RelationManager:Task')TIMES 0
+
+%NewClassOtherType DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataIsRef DEPEND %NewClassPropertyItems LONG TIMES 0
+
+%NewClassDataSize DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim1 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim2 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim3 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim4 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%ClassMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassMethodName DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassMethodPrototype DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassProperty DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataType DEPEND %ClassPropertyItems DEFAULT TIMES 3
+WHEN  ('FuzzyMatcher')TIMES 0
+WHEN  ('INIManager')TIMES 0
+WHEN  ('RelationManager:Task')TIMES 0
+
+%ClassOtherType DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataIsRef DEPEND %ClassPropertyItems LONG TIMES 0
+
+%ClassDataSize DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim1 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim2 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim3 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim4 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%OverrideThreaded DEPEND %File DEFAULT TIMES 2
+WHEN  ('') ('Use Default')
+WHEN  ('Task') ('Use Default')
+
+%OverrideCreate DEPEND %File DEFAULT TIMES 2
+WHEN  ('') ('Use Default')
+WHEN  ('Task') ('Use Default')
+
+%OverrideExternal DEPEND %File DEFAULT TIMES 2
+WHEN  ('') ('Use Default')
+WHEN  ('Task') ('Use Default')
+
+%OverrideExternalSource DEPEND %File DEFAULT TIMES 0
+
+%OverrideExternalAPP DEPEND %File LONG TIMES 0
+
+%OverrideExport DEPEND %File LONG TIMES 0
+
+%FileDeclarationMode DEPEND %File DEFAULT TIMES 2
+WHEN  ('') ('Use User Options')
+WHEN  ('Task') ('Use User Options')
+
+%FileDeclarationThread DEPEND %File LONG TIMES 2
+WHEN  ('') (0)
+WHEN  ('Task') (1)
+
+%FileDeclarationBindable DEPEND %File LONG TIMES 2
+WHEN  ('') (1)
+WHEN  ('Task') (1)
+
+%FileDeclarationName DEPEND %File DEFAULT TIMES 0
+
+%FileDeclarationOver DEPEND %File DEFAULT TIMES 0
+
+%FileDeclarationType DEPEND %File LONG TIMES 2
+WHEN  ('') (0)
+WHEN  ('Task') (0)
+
+%OverrideOpenMode DEPEND %File DEFAULT TIMES 2
+WHEN  ('') ('Use Default')
+WHEN  ('Task') ('Use Default')
+
+%OverrideUserAccess DEPEND %File DEFAULT TIMES 2
+WHEN  ('') ('Use Default')
+WHEN  ('Task') ('Use Default')
+
+%OverrideOtherAccess DEPEND %File DEFAULT TIMES 2
+WHEN  ('') ('Use Default')
+WHEN  ('Task') ('Use Default')
+
+%OverrideLazyOpen DEPEND %File DEFAULT TIMES 2
+WHEN  ('') ('Use Default')
+WHEN  ('Task') ('Use Default')
+
+%StandardExternalModule DEPEND %Module LONG TIMES 17
+WHEN  ('') (1)
+WHEN  ('MP3Random.clw') (1)
+WHEN  ('MP3Random002.clw') (1)
+WHEN  ('MP3Random006.clw') (1)
+WHEN  ('SeparaDir.clw') (1)
+WHEN  ('SeparaDir002.clw') (1)
+WHEN  ('SeparaDir006.clw') (1)
+WHEN  ('WindowFormatter.clw') (1)
+WHEN  ('WindowFormatter002.clw') (1)
+WHEN  ('WindowFormatter006.clw') (1)
+WHEN  ('respaldo.clw') (1)
+WHEN  ('respaldo002.clw') (1)
+WHEN  ('respaldo006.clw') (1)
+WHEN  ('respaldo007.clw') (1)
+WHEN  ('respaldo008.clw') (1)
+WHEN  ('respaldo009.clw') (1)
+WHEN  ('respaldo010.clw') (1)
+
+%NoGenerateGlobals LONG  (0)
+%WindowManagerType DEFAULT  ('WindowManager')
+%ResetOnGainFocus LONG  (0)
+%AutoToolbar LONG  (1)
+%AutoRefresh LONG  (1)
+%ImageClass DEFAULT  ('ImageManager')
+%ErrorManagerType DEFAULT  ('ErrorClass')
+%DefaultErrorCategory DEFAULT  ('ABC')
+%StoreErrorHistory LONG  (0)
+%LimitStoredHistory LONG  (0)
+%ErrorHistoryThreshold DEFAULT  ('300')
+%HistoryViewTrigger DEFAULT  ('Level:Fatal')
+%PopupClass DEFAULT  ('PopupClass')
+%SelectFileClass DEFAULT  ('SelectFileClass')
+%ResizerType DEFAULT  ('WindowResizeClass')
+%ResizerDeFaultFindParents LONG  (1)
+%ResizerDefaultOptimizeMoves LONG  (1)
+%ResizerDefaultOptimizeRedraws LONG  (1)
+%INIClass DEFAULT  ('INIClass')
+%RunTimeTranslatorType DEFAULT  ('TranslatorClass')
+%ExtractionFilename DEFAULT  ('')
+%TranslationGroups MULTI LONG  ()
+%TranslationFile DEPEND %TranslationGroups DEFAULT TIMES 0
+
+%TranslationGroup DEPEND %TranslationGroups DEFAULT TIMES 0
+
+%FuzzyMatcherClass DEFAULT  ('FuzzyClass')
+%FileManagerType DEFAULT  ('FileManager')
+%ViewManagerType DEFAULT  ('ViewManager')
+%RelationManagerType DEFAULT  ('RelationManager')
+%BrowserType DEFAULT  ('BrowseClass')
+%ActiveInvisible LONG  (0)
+%AllowUnfilled LONG  (0)
+%RetainRow LONG  (1)
+%BrowseEIPManagerType DEFAULT  ('BrowseEIPManager')
+%EditInPlaceType DEFAULT  ('EditEntryClass')
+%GridClass DEFAULT  ('GridClass')
+%SidebarClass DEFAULT  ('SidebarClass')
+%StepManagerType DEFAULT  ('StepClass')
+%StepManagerLongType DEFAULT  ('StepLongClass')
+%StepManagerRealType DEFAULT  ('StepRealClass')
+%StepManagerStringType DEFAULT  ('StepStringClass')
+%StepManagerCustomType DEFAULT  ('StepCustomClass')
+%StepLocatorType DEFAULT  ('StepLocatorClass')
+%EntryLocatorType DEFAULT  ('EntryLocatorClass')
+%IncrementalLocatorType DEFAULT  ('IncrementalLocatorClass')
+%FilteredLocatorType DEFAULT  ('FilterLocatorClass')
+%FileDropManagerType DEFAULT  ('FileDropClass')
+%FileDropComboManagerType DEFAULT  ('FileDropComboClass')
+%QBEFormType DEFAULT  ('QueryFormClass')
+%QBEFormVisualType DEFAULT  ('QueryFormVisual')
+%QBEListType DEFAULT  ('QueryListClass')
+%QBEListVisualType DEFAULT  ('QueryListVisual')
+%ProcessType DEFAULT  ('ProcessClass')
+%PrintPreviewType DEFAULT  ('PrintPreviewClass')
+%ReportManagerType DEFAULT  ('ReportManager')
+%AsciiViewerClass DEFAULT  ('AsciiViewerClass')
+%AsciiSearchClass DEFAULT  ('AsciiSearchClass')
+%AsciiPrintClass DEFAULT  ('AsciiPrintClass')
+%AsciiFileManagerType DEFAULT  ('AsciiFileClass')
+%ToolbarClass DEFAULT  ('ToolbarClass')
+%ToolbarListBoxType DEFAULT  ('ToolbarListboxClass')
+%ToolbarRelTreeType DEFAULT  ('ToolbarReltreeClass')
+%ToolbarUpdateClassType DEFAULT  ('ToolbarUpdateClass')
+%OverrideAbcSettings LONG  (0)
+%AbcSourceLocation DEFAULT  ('LINK')
+%AbcLibraryName DEFAULT  ('')
+%ProgramIcon DEFAULT  ('Disquete.ico')
+%INIType DEFAULT  ('NVD_INI')
+%INIInAppDirectory LONG  (1)
+%REGRoot DEFAULT  ('REG_CLASSES_ROOT')
+%DisableINISaveWindow LONG  (0)
+%UseDefaultXPManifest LONG  (0)
+%GenerateXPManifest LONG  (0)
+%LinkGenerateXPManifest LONG  (0)
+%AddVistaXPManifest LONG  (0)
+%VistaManifestExecutionLevel DEFAULT  ('asInvoker')
+%VistaManifestUIAccess LONG  (0)
+%ExtUIXPMenuEnableGlobal LONG  (0)
+%ExtUIXPMenuColorTypeGlobal DEFAULT  ('XPLunaSilver')
+%ExtUIXPMenuColorLeftGlobal LONG  (15920364)
+%ExtUIXPMenuColorRightGlobal LONG  (12560039)
+%ExtUIXPMenuColorSelectionBarLeftGlobal LONG  (15920364)
+%ExtUIXPMenuColorSelectionBarRightGlobal LONG  (15920364)
+%ExtUIXPMenuColorSelectionBorderGlobal LONG  (15920364)
+%ExtUIXPMenuColorHotLeftGlobal LONG  (15920364)
+%ExtUIXPMenuColorHotRightGlobal LONG  (15920364)
+%ExtUIXPMenuColorSelectedLeftGlobal LONG  (15920364)
+%ExtUIXPMenuColorSelectedRightGlobal LONG  (15920364)
+%ExtUIXPMenuFlat LONG  (1)
+%ExtUIMDITabGlobal DEFAULT  ('DISABLE')
+%ExtUIMDITabStyleGlobal DEFAULT  ('Default')
+%ExtUITabStyleGlobal DEFAULT  ('Default')
+%WindowEnableEnhanceFocus LONG  (0)
+%SelectedText LONG  (1)
+%SelectedRadio LONG  (1)
+%SelectedSpin LONG  (1)
+%SelectedCheck LONG  (1)
+%SelectedDropList LONG  (1)
+%SelectedList LONG  (1)
+%SelectedDisplayChangeColor LONG  (1)
+%SelectedColor LONG  (65535)
+%SelectedStyle LONG  (1)
+%SelectedRequired LONG  (0)
+%SelectedRequiredColor LONG  (65535)
+%SelectedDisplayBox LONG  (1)
+%SelectedDisplayBoxFillColor LONG  (65535)
+%SelectedDisplayBoxBorderColor LONG  (0)
+%SelectedDisplayBoxBorderSize DEFAULT  ('2')
+%SelectedRequiredBox LONG  (0)
+%SelectedRequiredDisplayBoxFillColor LONG  (255)
+%SelectedRequiredDisplayBoxBorderColor LONG  (0)
+%SelectedCaret LONG  (1)
+%SelectedCaretColor LONG  (8421504)
+%SelectedCaretCharacter DEFAULT  ('»')
+%SelectedCaretCharacterSeparation DEFAULT  ('8')
+%ExcludeSelectedDropList LONG  (0)
+%GlobalUseEnterInsteadTab LONG  (0)
+%GlobalUseEnterInsteadTabExclude MULTI DEFAULT  ()
+%GlobalUseEnterInsteadTabEnable DEFAULT  ('Enable')
+%GlobalUseEnterInsteadTabEnableValue DEFAULT  ('True')
+%GlobalEnableAutoSizeColumn LONG  (0)
+%GlobalEnableListFormatManager LONG  (0)
+%GlobalUserFieldListFormatManager DEFAULT  ('1')
+%TableOrigin DEFAULT  ('Application')
+%FileEquate DEFAULT  ('LFM_CFile')
+%ConfigFilePRE DEFAULT  ('CFG')
+%ConfigFileOEM LONG  (0)
+%ConfigFileTHREAD LONG  (1)
+%ConfigFileENCRYPT LONG  (0)
+%ConfigFilePASSWORD DEFAULT  ('')
+%FormatNameSize DEFAULT  ('30')
+%FormatBufferSize DEFAULT  ('5120')
+%VariableBufferSize DEFAULT  ('2048')
+%UseConfigFileName DEFAULT  ('Default')
+%ConfigFileVariable DEFAULT  ('')
+%ConfigFilePath DEFAULT  ('')
+%ConfigFileNAME DEFAULT  ('Formats.FDB')
+%ColonCounter DEFAULT  ('')
+%WrongSymbol DEFAULT  ('')
+%DictionaryTableOrigin FILE  ()
+%GlobalLFMSortOrderMenuText DEFAULT  ('SortOrder')
+%GlobalEnableRebase LONG  (0)
+%RBDMethod DEFAULT  ('Specify manually')
+%RBDImageBase DEFAULT  ('10000000')
+%DefaultLocalExternal LONG  (0)
+%OverrideLocalExternal DEPEND %File LONG TIMES 0
+
+%ErrorStatusManagerType DEFAULT  ('ErrorStatusClass')
+%AllowSelectCopy LONG  (0)
+%CalendarManagerType DEFAULT  ('CalendarClass')
+%GlobalChangeColor LONG  (0)
+%GlobalColorSunday LONG  (255)
+%GlobalColorSaturday LONG  (255)
+%GlobalColorHoliday LONG  (32768)
+%GlobalColorOther LONG  (0)
+%GlobalSelectOnClose DEFAULT  ('Select')
+%GlobalUseABCClasess LONG  (1)
+%FormVCRManagerType DEFAULT  ('FormVCRClass')
+%EditInPlaceInterface DEFAULT  ('Original')
+%EditInPlaceEntryType DEFAULT  ('EditEntryClass')
+%EditInPlaceTextType DEFAULT  ('EditTextClass')
+%EditInPlaceCheckType DEFAULT  ('EditCheckClass')
+%EditInPlaceSpinType DEFAULT  ('EditSpinClass')
+%EditInPlaceDropListType DEFAULT  ('EditDropListClass')
+%EditInPlaceDropComboType DEFAULT  ('EditDropComboClass')
+%EditInPlaceColorType DEFAULT  ('EditColorClass')
+%EditInPlaceFileType DEFAULT  ('EditFileClass')
+%EditInPlaceFontType DEFAULT  ('EditFontClass')
+%EditInPlaceMultiSelectType DEFAULT  ('EditMultiSelectClass')
+%EditInPlaceCalendarType DEFAULT  ('EditCalendarClass')
+%EditInPlaceLookupType DEFAULT  ('EditLookupClass')
+%EditInPlaceOtherType DEFAULT  ('EditEntryClass')
+%ReportTargetSelectorManagerType DEFAULT  ('ReportTargetSelectorClass')
+%BreakManagerType DEFAULT  ('BreakManagerClass')
+%ToolbarFormVCRType DEFAULT  ('ToolbarFormVCRClass')
+%AppTemplateFamily DEFAULT  ('ABC')
+%CWTemplateVersion DEFAULT  ('v6.3')
+%ABCVersion DEFAULT  ('6300')
+%INIProgramIniLocation DEFAULT  ('APPDIR')
+%INICSIDLDirectory DEFAULT  ('SV:CSIDL_PERSONAL')
+%CSIDLCompanyDir DEFAULT  ('')
+%CSIDLProductDir DEFAULT  ('')
+%CSIDLCreate LONG  (0)
+%ButtonMarginsCompatibility LONG  (0)
+%NoThemedControlsDependency LONG  (0)
+%VistaManifestdpiAware LONG  (1)
+%VistaManifestDependentAssembly MULTI LONG  ()
+%VistaManifestDependentAssemblyName DEPEND %VistaManifestDependentAssembly DEFAULT TIMES 0
+
+%VistaManifestDependentAssemblyVersion DEPEND %VistaManifestDependentAssembly DEFAULT TIMES 0
+
+%VistaManifestDependentAssemblyType DEPEND %VistaManifestDependentAssembly DEFAULT TIMES 0
+
+%VistaManifestDependentAssemblyPublicKeyToken DEPEND %VistaManifestDependentAssembly DEFAULT TIMES 0
+
+%VistaManifestDependentAssemblyLanguage DEPEND %VistaManifestDependentAssembly DEFAULT TIMES 0
+
+%VistaManifestDependentAssemblyProcessorArchitecture DEPEND %VistaManifestDependentAssembly LONG TIMES 0
+
+%W7ManifestVista LONG  (1)
+%W7ManifestW7 LONG  (1)
+%W7ManifestW8 LONG  (1)
+%W7ManifestW81 LONG  (1)
+%W7ManifestW10 LONG  (1)
+%ForceMakeTransparentXPManifest LONG  (0)
+%ForceMakeColorXPManifest LONG  (0)
+%ForceSHEETNoTheme LONG  (0)
+%ExtUIXPMenuDisableImageBar LONG  (1)
+%ExtUIXPMenuEnableRuntime LONG  (0)
+%ExtUIXPMenuRuntimeVar DEFAULT  ('GLO:ArchivoIni')
+%ExtUIXPMenuSelVertical LONG  (1)
+%ExtUIXPMenuColorNormalBarLeftGlobal LONG  (15920364)
+%ExtUIXPMenuColorNormalBarRightGlobal LONG  (15920364)
+%ExtUIXPMenuColorItemBackgroundGlobal LONG  (-2147483644)
+%ExtUIXPMenuColorNormalText LONG  (0)
+%ExtUIXPMenuColorSelectedText LONG  (0)
+%ExtUIXPMenuColorHotText LONG  (0)
+%ExtUIXPMenuShowImageBar LONG  (0)
+%ExtUIXPMenuSeparator3D LONG  (1)
+%ExtUIXPMenuSeparatorFull LONG  (0)
+%ExtUIXPMenuVerticalLine LONG  (1)
+%EnableOSK DEFAULT  ('OFF')
+%GlobalInterLine DEFAULT  ('0')
+%GeneratePropDataPath LONG  (0)
+%PropDataPathLocation DEFAULT  ('CSIDLLIKEINI')
+%DataPathCSIDLDirectory DEFAULT  ('SV:CSIDL_PERSONAL')
+%DataPathCSIDLCompanyDir DEFAULT  ('')
+%DataPathCSIDLProductDir DEFAULT  ('')
+%DataPathCSIDLCreate LONG  (0)
+%DataPathOtherDirectory DEFAULT  ('')
+%DataPathOtherDirectoryCreate LONG  (0)
+%OverrideDoNotAssertOnCloseMisuse DEPEND %File LONG TIMES 2
+WHEN  ('') (0)
+WHEN  ('Task') (0)
+
+[ADDITION]
+NAME DebugMessage DebugOutDef
+[INSTANCE]
+INSTANCE 4
+[PROMPTS]
+%DEBUGOUTName DEFAULT  ('DEBUGOUT')
+%DEBUGPIDS DEFAULT  ('This program used Clarion thread ')
+%DEBUGOUTError LONG  (0)
+%DEBUGOUTErrorAPI LONG  (0)
+%DEBUGOUTPrefix DEFAULT  ('')
+[PERSIST]
+%SaveCreateLocalMap DEFAULT  ('1')
+%GenerationCompleted DEPEND %Module DEFAULT TIMES 17
+WHEN  ('MP3Random.clw') ('1')
+WHEN  ('MP3Random002.clw') ('1')
+WHEN  ('MP3Random006.clw') ('1')
+WHEN  ('Respaldo.clw') ('')
+WHEN  ('SeparaDir.clw') ('1')
+WHEN  ('SeparaDir002.clw') ('1')
+WHEN  ('SeparaDir006.clw') ('1')
+WHEN  ('WindowFormatter.clw') ('1')
+WHEN  ('WindowFormatter002.clw') ('1')
+WHEN  ('WindowFormatter006.clw') ('1')
+WHEN  ('respaldo.clw') ('1')
+WHEN  ('respaldo002.clw') ('1')
+WHEN  ('respaldo006.clw') ('1')
+WHEN  ('respaldo007.clw') ('')
+WHEN  ('respaldo008.clw') ('')
+WHEN  ('respaldo009.clw') ('')
+WHEN  ('respaldo010.clw') ('')
+
+%LastTarget32 DEFAULT  ('1')
+%LastProgramExtension DEFAULT  ('EXE')
+%LastApplicationDebug DEFAULT  ('')
+%LastApplicationLocalLibrary DEFAULT  ('1')
+[PROJECT]
+#noedit
+-- NAMESPACE ClarionDefaultNamespace
+-- OUTPUTPATH D:\Works\_SDigitales\WindowsFormatter
+#system win32 exe
+#model clarion lib
+#set RELEASE = on
+#pragma link_option(icon=>WindowTile.ico)
+#pragma define(_ABCDllMode_=>0) -- GENERATED
+#pragma define(_ABCLinkMode_=>1) -- GENERATED
+#compile "WindowFormatter.clw" -- GENERATED
+#compile "WindowFormatter002.clw" -- GENERATED
+#compile "WindowFormatter006.clw" -- GENERATED
+#compile "WindowFormatter_BC0.CLW" -- GENERATED
+#compile "WINDOWFORMATTER_BC.CLW" -- GENERATED
+#link "WindowFormatter.EXE"
+[PROGRAM]
+[COMMON]
+FROM ABC ABC
+MODIFIED '2019/05/06' '10:37:09'
+[DATA]
+[SCREENCONTROLS]
+! PROMPT('GLO : Desarrollo:'),USE(?GLO:Desarrollo:Prompt)
+! ENTRY(@n3),USE(GLO:Desarrollo)
+[REPORTCONTROLS]
+! STRING(@n3),USE(GLO:Desarrollo)
+GLO:Desarrollo           BYTE
+!!> GUID('988add10-acf3-4733-ba29-b7ac61cd0ba0'),PROMPT('GLO : Desarrollo:'),HEADER('GLO : Desarrollo'),PICTURE(@n3),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('GLO : Agenda Detenida:'),USE(?GLO:AgendaDetenida:Prompt)
+! ENTRY(@n3),USE(GLO:AgendaDetenida)
+[REPORTCONTROLS]
+! STRING(@n3),USE(GLO:AgendaDetenida)
+GLO:AgendaDetenida       BYTE
+!!> GUID('6439bf80-8e3d-4cad-bebc-2e7eb8d86735'),PROMPT('GLO : Agenda Detenida:'),HEADER('GLO : Agenda Detenida'),PICTURE(@n3),TYPEMODE(INS)
+[END]
+[MODULE]
+[COMMON]
+FROM ABC GENERATED
+MODIFIED '2021/01/28' '17:10:35'
+[END]
+[MODULE]
+[COMMON]
+FROM ABC GENERATED
+MODIFIED '2021/01/28' '17:11:44'
+[PROCEDURE]
+NAME WindowFormatter
+[COMMON]
+FROM ABC Window
+MODIFIED '2021/01/30' '17:40:44'
+[DATA]
+[SCREENCONTROLS]
+! PROMPT('Texto Original:'),USE(?TextoOriginal:Prompt)
+! ENTRY(@s255),USE(TextoOriginal)
+[REPORTCONTROLS]
+! STRING(@s255),USE(TextoOriginal)
+TextoOriginal            STRING(20480)
+!!> GUID('5d397bd2-ad78-479d-af7e-0220e6a10069'),PROMPT('Texto Original:'),HEADER('Texto Original'),PICTURE(@s255),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Texto Trabajo:'),USE(?TextoTrabajo:Prompt)
+! ENTRY(@s255),USE(TextoTrabajo)
+[REPORTCONTROLS]
+! STRING(@s255),USE(TextoTrabajo)
+TextoTrabajo             STRING(20480)
+!!> GUID('525b30da-da5d-4607-9d83-ea6ebdf47fa3'),PROMPT('Texto Trabajo:'),HEADER('Texto Trabajo'),PICTURE(@s255),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Caracter:'),USE(?Caracter:Prompt)
+! ENTRY(@s1),USE(Caracter)
+[REPORTCONTROLS]
+! STRING(@s1),USE(Caracter)
+Caracter                 STRING(1)
+!!> GUID('e21c1e9d-06f1-47a5-ae77-78712732eb2b'),PROMPT('Caracter:'),HEADER('Caracter'),PICTURE(@s1),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Caracter Ant:'),USE(?CaracterAnt:Prompt)
+! ENTRY(@s1),USE(CaracterAnt)
+[REPORTCONTROLS]
+! STRING(@s1),USE(CaracterAnt)
+CaracterAnt              STRING(1)
+!!> GUID('f42e20ef-114f-472b-86a8-a9a607cff2ec'),PROMPT('Caracter Ant:'),HEADER('Caracter Ant'),PICTURE(@s1),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Caracter Pos:'),USE(?CaracterPos:Prompt)
+! ENTRY(@s1),USE(CaracterPos)
+[REPORTCONTROLS]
+! STRING(@s1),USE(CaracterPos)
+CaracterPos              STRING(1)
+!!> GUID('593a9808-282a-4b79-8e75-e302a4dd4f0c'),PROMPT('Caracter Pos:'),HEADER('Caracter Pos'),PICTURE(@s1),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Concatenar:'),USE(?Concatenar:Prompt)
+! ENTRY(@n3),USE(Concatenar)
+[REPORTCONTROLS]
+! STRING(@n3),USE(Concatenar)
+Concatenar               BYTE
+!!> GUID('44ec2230-1ed6-49e7-81c8-714353108876'),PROMPT('Concatenar:'),HEADER('Concatenar'),PICTURE(@n3),TYPEMODE(INS)
+ContaAvance              USHORT
+!!> GUID('206697fc-5319-4486-a0dd-92d2b8984a5e')
+[SCREENCONTROLS]
+! PROMPT('Seguimos:'),USE(?Seguimos:Prompt)
+! ENTRY(@n3),USE(Seguimos)
+[REPORTCONTROLS]
+! STRING(@n3),USE(Seguimos)
+Seguimos                 BYTE
+!!> GUID('25fc864b-6959-4903-935f-c0f55f27be5c'),PROMPT('Seguimos:'),HEADER('Seguimos'),PICTURE(@n3),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Cadena Font:'),USE(?CadenaFont:Prompt)
+! ENTRY(@s5),USE(CadenaFont)
+[REPORTCONTROLS]
+! STRING(@s5),USE(CadenaFont)
+CadenaFont               STRING(5)
+!!> GUID('8dbc0537-3d83-4fb5-b849-37c950b73d5c'),PROMPT('Cadena Font:'),HEADER('Cadena Font'),PICTURE(@s5),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Cadena:'),USE(?Cadena:Prompt)
+! ENTRY(@s20),USE(Cadena)
+[REPORTCONTROLS]
+! STRING(@s20),USE(Cadena)
+Cadena                   STRING(20)
+!!> GUID('3fd845db-40bb-4c42-852f-66202932c209'),PROMPT('Cadena:'),HEADER('Cadena'),PICTURE(@s20),TYPEMODE(INS)
+[PROMPTS]
+%ClassItem UNIQUE DEFAULT  ('Default', 'WindowToolbar')
+%DefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 2
+WHEN  ('Default') ('WindowManager')
+WHEN  ('WindowToolbar') ('ToolbarClass')
+
+%ActualDefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 2
+WHEN  ('Default') ('')
+WHEN  ('WindowToolbar') ('')
+
+%ClassLines DEPEND %ClassItem MULTI DEFAULT TIMES 0
+
+%ProcedureParameters MULTI LONG  ()
+%ProcedureParameterName DEPEND %ProcedureParameters DEFAULT TIMES 0
+
+%ProcedureParameterType DEPEND %ProcedureParameters DEFAULT TIMES 0
+
+%ProcedureParameterDefault DEPEND %ProcedureParameters DEFAULT TIMES 0
+
+%ProcedureParameterOmitted DEPEND %ProcedureParameters LONG TIMES 0
+
+%ProcedureParameterByReference DEPEND %ProcedureParameters LONG TIMES 0
+
+%Parameters DEFAULT  ('')
+%ReturnValue FIELD  ()
+%WindowOperationMode DEFAULT  ('Use WINDOW setting')
+%INISaveWindow LONG  (1)
+%ProcedureDisableEnhanceFocus LONG  (0)
+%ProcedureUseEnterInsteadTabOverride LONG  (0)
+%WindowUseEnterInsteadTab LONG  (1)
+%ProcedureUseEnterInsteadTabExcludeListCombo LONG  (0)
+%ProcedureUseEnterInsteadTabEnableNextTabStop LONG  (0)
+%ProcedureUseEnterInsteadTabExcludeG LONG  (1)
+%WindowUseEnterInsteadTabExclude MULTI DEFAULT  ()
+%GlobalObject DEPEND %ClassItem DEFAULT TIMES 2
+WHEN  ('Default') ('NO')
+WHEN  ('WindowToolbar') ('NO')
+
+%ThisObjectName DEPEND %ClassItem DEFAULT TIMES 2
+WHEN  ('Default') ('ThisWindow')
+WHEN  ('WindowToolbar') ('Toolbar')
+
+%UseDefaultABCBaseClass DEPEND %ClassItem LONG TIMES 2
+WHEN  ('Default') (1)
+WHEN  ('WindowToolbar') (1)
+
+%UseABCBaseClass DEPEND %ClassItem LONG TIMES 2
+WHEN  ('Default') (1)
+WHEN  ('WindowToolbar') (1)
+
+%ABCBaseClass DEPEND %ClassItem DEFAULT TIMES 2
+WHEN  ('Default') ('')
+WHEN  ('WindowToolbar') ('')
+
+%ExtBaseClass DEPEND %ClassItem DEFAULT TIMES 0
+
+%BaseClassIncludeFile DEPEND %ClassItem DEFAULT TIMES 0
+
+%DeriveFromBaseClass DEPEND %ClassItem LONG TIMES 2
+WHEN  ('Default') (0)
+WHEN  ('WindowToolbar') (0)
+
+%NewMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewMethodName DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewMethodPrototype DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewClassProperty DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataType DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassOtherType DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataIsRef DEPEND %NewClassPropertyItems LONG TIMES 0
+
+%NewClassDataSize DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim1 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim2 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim3 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim4 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%ClassMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassMethodName DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassMethodPrototype DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassProperty DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataType DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassOtherType DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataIsRef DEPEND %ClassPropertyItems LONG TIMES 0
+
+%ClassDataSize DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim1 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim2 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim3 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim4 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%WindowStyles MULTI LONG  ()
+%WindowStyleFontName DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleFontNameVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleFontNameIsVariable DEPEND %WindowStyles LONG TIMES 0
+
+%WindowStyleFontSize DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleFontSizeVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleFontSizeIsVariable DEPEND %WindowStyles LONG TIMES 0
+
+%WindowStyleFontStyle DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleFontStyleVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleFontStyleIsVariable DEPEND %WindowStyles LONG TIMES 0
+
+%WindowStyleFontColor DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleFontCharSet DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleForegroundNormal DEPEND %WindowStyles LONG TIMES 0
+
+%WindowStyleForegroundNormalVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleForegroundNormalIsVariable DEPEND %WindowStyles LONG TIMES 0
+
+%WindowStyleBackgroundNormal DEPEND %WindowStyles LONG TIMES 0
+
+%WindowStyleBackgroundNormalVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleBackgroundNormalIsVariable DEPEND %WindowStyles LONG TIMES 0
+
+%WindowStyleForegroundSelected DEPEND %WindowStyles LONG TIMES 0
+
+%WindowStyleForegroundSelectedVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleForegroundSelectedIsVariable DEPEND %WindowStyles LONG TIMES 0
+
+%WindowStyleBackgroundSelected DEPEND %WindowStyles LONG TIMES 0
+
+%WindowStyleBackgroundSelectedVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleBackgroundSelectedIsVariable DEPEND %WindowStyles LONG TIMES 0
+
+%WindowStylePicture DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStylePictureVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStylePictureIsVariable DEPEND %WindowStyles LONG TIMES 0
+
+%WindowStyleOtherListboxes MULTI DEFAULT  ()
+%ProcedureAutoBindFields MULTI LONG  ()
+%ProcedureAutoBindField DEPEND %ProcedureAutoBindFields DEFAULT TIMES 0
+
+%ProcedureAutoBindFieldTPL DEPEND %ProcedureAutoBindFields DEFAULT TIMES 0
+
+%ProcedureAutoBindProcedures MULTI LONG  ()
+%ProcedureAutoBindProcedure DEPEND %ProcedureAutoBindProcedures DEFAULT TIMES 0
+
+%ProcedureAutoBindProcedureTPL DEPEND %ProcedureAutoBindProcedures DEFAULT TIMES 0
+
+%ProcedureAutoBindFieldsIgnored MULTI LONG  ()
+%ProcedureAutoBindFieldIgnored DEPEND %ProcedureAutoBindFieldsIgnored DEFAULT TIMES 0
+
+%ProcedureAutoBindProceduresIgnored MULTI LONG  ()
+%ProcedureAutoBindProcedureIgnored DEPEND %ProcedureAutoBindProceduresIgnored DEFAULT TIMES 0
+
+%ProcedureAutoBindValidToAddField LONG  (0)
+%ProcedureUserBindFields MULTI LONG  ()
+%ProcedureUserBindField DEPEND %ProcedureUserBindFields FIELD TIMES 0
+
+%ProcedureAutoBindFieldIgnore DEPEND %ProcedureAutoBindFields LONG TIMES 0
+
+%ProcedureUserBindProcedures MULTI LONG  ()
+%ProcedureUserBindProcedure DEPEND %ProcedureUserBindProcedures PROCEDURE TIMES 0
+
+%ProcedureAutoBindProcedureIgnore DEPEND %ProcedureAutoBindProcedures LONG TIMES 0
+
+%ProcedureUserBindExpressions MULTI LONG  ()
+%ProcedureUserBindExpressionName DEPEND %ProcedureUserBindExpressions DEFAULT TIMES 0
+
+%ProcedureUserBindExpression DEPEND %ProcedureUserBindExpressions DEFAULT TIMES 0
+
+%ExtUITabIcon DEPEND %Control DEFAULT TIMES 0
+
+%ExtUITabStyleOverrideGlobal DEPEND %Control LONG TIMES 0
+
+%ExtUITabStyle DEPEND %Control DEFAULT TIMES 2
+WHEN  ('?CancelButton') ('Default')
+WHEN  ('?EliminarFonts') ('Default')
+
+%ButtonAction DEPEND %Control DEFAULT TIMES 7
+WHEN  ('?CancelButton') ('No Special Action')
+WHEN  ('?EliminarFonts') ('No Special Action')
+WHEN  ('?EliminarOrdinal') ('No Special Action')
+WHEN  ('?EliminarOrig') ('No Special Action')
+WHEN  ('?EliminarSeq') ('No Special Action')
+WHEN  ('?OkButton:2') ('No Special Action')
+WHEN  ('?PreProceso') ('No Special Action')
+
+%ButtonRunName DEPEND %Control DEFAULT TIMES 1
+WHEN  ('?CancelButton') ('')
+
+%ButtonRunParameters DEPEND %Control DEFAULT TIMES 1
+WHEN  ('?CancelButton') ('')
+
+%ButtonProcedure DEPEND %Control PROCEDURE TIMES 1
+WHEN  ('?CancelButton') ()
+
+%ButtonThread DEPEND %Control LONG TIMES 1
+WHEN  ('?CancelButton') (0)
+
+%ButtonThreadStack DEPEND %Control DEFAULT TIMES 7
+WHEN  ('?CancelButton') ('25000')
+WHEN  ('?EliminarFonts') ('25000')
+WHEN  ('?EliminarOrdinal') ('25000')
+WHEN  ('?EliminarOrig') ('25000')
+WHEN  ('?EliminarSeq') ('25000')
+WHEN  ('?OkButton:2') ('25000')
+WHEN  ('?PreProceso') ('25000')
+
+%ButtonParameters DEPEND %Control DEFAULT TIMES 1
+WHEN  ('?CancelButton') ('')
+
+%ButtonReturnValueAssignment DEPEND %Control FIELD TIMES 1
+WHEN  ('?CancelButton') ()
+
+%ButtonReturnValueReferenceAssign DEPEND %Control LONG TIMES 1
+WHEN  ('?CancelButton') (0)
+
+%ButtonRequest DEPEND %Control DEFAULT TIMES 7
+WHEN  ('?CancelButton') ('None')
+WHEN  ('?EliminarFonts') ('None')
+WHEN  ('?EliminarOrdinal') ('None')
+WHEN  ('?EliminarOrig') ('None')
+WHEN  ('?EliminarSeq') ('None')
+WHEN  ('?OkButton:2') ('None')
+WHEN  ('?PreProceso') ('None')
+
+%ButtonThreadParameters DEPEND %Control DEFAULT TIMES 1
+WHEN  ('?CancelButton') ('')
+
+%ButtonThreadReturnValueAssignment DEPEND %Control FIELD TIMES 1
+WHEN  ('?CancelButton') ()
+
+%PreLookupKey DEPEND %Control KEY TIMES 0
+
+%PreLookupField DEPEND %Control COMPONENT TIMES 0
+
+%PreLookupProcedure DEPEND %Control PROCEDURE TIMES 0
+
+%PreLookupProcedureParameters DEPEND %Control DEFAULT TIMES 0
+
+%PostLookupKey DEPEND %Control KEY TIMES 0
+
+%PostLookupField DEPEND %Control COMPONENT TIMES 0
+
+%PostLookupProcedure DEPEND %Control PROCEDURE TIMES 0
+
+%PostLookupProcedureParameters DEPEND %Control DEFAULT TIMES 0
+
+%PostLookupDuringValidate DEPEND %Control LONG TIMES 2
+WHEN  ('?CancelButton') (1)
+WHEN  ('?EliminarFonts') (1)
+
+%LookupAssign DEPEND %Control MULTI LONG TIMES 0
+
+%MoreTarget DEPEND %LookupAssign FIELD TIMES 0
+
+%MoreField DEPEND %LookupAssign DEFAULT TIMES 0
+
+%ForceWindowRefresh DEPEND %Control LONG TIMES 0
+
+%CheckedAssigns DEPEND %Control MULTI LONG TIMES 0
+
+%CheckedAssignVariable DEPEND %CheckedAssigns FIELD TIMES 0
+
+%CheckedAssignValue DEPEND %CheckedAssigns DEFAULT TIMES 0
+
+%CheckedHides DEPEND %Control MULTI LONG TIMES 0
+
+%CheckedControl DEPEND %CheckedHides DEFAULT TIMES 0
+
+%CheckedControlAction DEPEND %CheckedHides DEFAULT TIMES 2
+WHEN  ('?CancelButton')TIMES 0
+WHEN  ('?EliminarFonts')TIMES 0
+
+%CheckedEnables DEPEND %Control MULTI LONG TIMES 0
+
+%CheckedControl1 DEPEND %CheckedEnables DEFAULT TIMES 0
+
+%CheckedControl1Action DEPEND %CheckedEnables DEFAULT TIMES 2
+WHEN  ('?CancelButton')TIMES 0
+WHEN  ('?EliminarFonts')TIMES 0
+
+%UncheckedAssigns DEPEND %Control MULTI LONG TIMES 0
+
+%UncheckedAssignVariable DEPEND %UncheckedAssigns FIELD TIMES 0
+
+%UncheckedAssignValue DEPEND %UncheckedAssigns DEFAULT TIMES 0
+
+%UnCheckedHides DEPEND %Control MULTI LONG TIMES 0
+
+%UnCheckedControl DEPEND %UnCheckedHides DEFAULT TIMES 0
+
+%UnCheckedControlAction DEPEND %UnCheckedHides DEFAULT TIMES 2
+WHEN  ('?CancelButton')TIMES 0
+WHEN  ('?EliminarFonts')TIMES 0
+
+%UnCheckedEnables DEPEND %Control MULTI LONG TIMES 0
+
+%UnCheckedControl1 DEPEND %UnCheckedEnables DEFAULT TIMES 0
+
+%UnCheckedControl1Action DEPEND %UnCheckedEnables DEFAULT TIMES 2
+WHEN  ('?CancelButton')TIMES 0
+WHEN  ('?EliminarFonts')TIMES 0
+
+%CheckedDisables DEPEND %Control MULTI LONG TIMES 0
+
+%CheckedDisableControl DEPEND %CheckedDisables DEFAULT TIMES 0
+
+%CheckedDisableControlAction DEPEND %CheckedDisables DEFAULT TIMES 2
+WHEN  ('?CancelButton')TIMES 0
+WHEN  ('?EliminarFonts')TIMES 0
+
+%UnCheckedDisables DEPEND %Control MULTI LONG TIMES 0
+
+%UnCheckedDisableControl DEPEND %UnCheckedDisables DEFAULT TIMES 0
+
+%UnCheckedDisableControlAction DEPEND %UnCheckedDisables DEFAULT TIMES 2
+WHEN  ('?CancelButton')TIMES 0
+WHEN  ('?EliminarFonts')TIMES 0
+
+%ProcedureOneInstance LONG  (0)
+%PreserveVarsLoc MULTI LONG  ()
+%PreserveVarLoc DEPEND %PreserveVarsLoc DEFAULT TIMES 0
+
+%FieldGradientColorType DEPEND %Control DEFAULT TIMES 1
+WHEN  ('?EliminarFonts') ('Off')
+
+%FieldGradientColorTypeVariable DEPEND %Control DEFAULT TIMES 1
+WHEN  ('?EliminarFonts') ('')
+
+%FieldGradientColorTypeIsVariable DEPEND %Control LONG TIMES 1
+WHEN  ('?EliminarFonts') (0)
+
+%FieldGradientColorFrom DEPEND %Control LONG TIMES 1
+WHEN  ('?EliminarFonts') (-1)
+
+%FieldGradientColorFromVariable DEPEND %Control DEFAULT TIMES 0
+
+%FieldGradientColorFromIsVariable DEPEND %Control LONG TIMES 1
+WHEN  ('?EliminarFonts') (0)
+
+%FieldGradientColorTo DEPEND %Control LONG TIMES 1
+WHEN  ('?EliminarFonts') (-1)
+
+%FieldGradientColorToVariable DEPEND %Control DEFAULT TIMES 0
+
+%FieldGradientColorToIsVariable DEPEND %Control LONG TIMES 1
+WHEN  ('?EliminarFonts') (0)
+
+%ActiveImageEnable DEPEND %Control LONG TIMES 0
+
+%AIObjectName DEPEND %Control DEFAULT TIMES 1
+WHEN  ('?EliminarFonts') ('AIBtn5')
+
+%AIEnableMimicControl DEPEND %Control LONG TIMES 1
+WHEN  ('?EliminarFonts') (1)
+
+%AIMimicControl DEPEND %Control DEFAULT TIMES 1
+WHEN  ('?EliminarFonts') ('?TextoOriginal')
+
+%AIImgRound DEPEND %Control LONG TIMES 0
+
+%AIOverrideImg DEPEND %Control DEFAULT TIMES 0
+
+%AIOverrideImgVariable DEPEND %Control DEFAULT TIMES 0
+
+%AIOverrideImgIsVariable DEPEND %Control LONG TIMES 1
+WHEN  ('?EliminarFonts') (0)
+
+%AIDisableImg DEPEND %Control DEFAULT TIMES 0
+
+%AIDisableImgVariable DEPEND %Control DEFAULT TIMES 0
+
+%AIDisableImgIsVariable DEPEND %Control LONG TIMES 1
+WHEN  ('?EliminarFonts') (0)
+
+%AIHotImg DEPEND %Control DEFAULT TIMES 0
+
+%AIHotImgVariable DEPEND %Control DEFAULT TIMES 0
+
+%AIHotImgIsVariable DEPEND %Control LONG TIMES 1
+WHEN  ('?EliminarFonts') (0)
+
+%AIPressedImg DEPEND %Control DEFAULT TIMES 0
+
+%AIPressedImgVariable DEPEND %Control DEFAULT TIMES 0
+
+%AIPressedImgIsVariable DEPEND %Control LONG TIMES 1
+WHEN  ('?EliminarFonts') (0)
+
+[EMBED]
+EMBED %ControlEventHandling
+[INSTANCES]
+WHEN '?CancelButton'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[GROUP]
+PRIORITY 5000
+INSTANCE 1
+[END]
+[END]
+WHEN '?PreProceso'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 8500
+PROPERTY:END
+  DO PreProceso      
+  SETCLIPBOARD(TextoOriginal)        
+[END]
+[END]
+WHEN '?EliminarFonts'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 8500
+PROPERTY:END
+ Cadena = ',FONT('
+  DO EliminarCadena
+  SETCLIPBOARD(TextoOriginal)        
+[END]
+[END]
+WHEN '?EliminarOrdinal'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 5000
+PROPERTY:END
+ Cadena = ',#ORDINAL('
+  DO EliminarCadena
+  SETCLIPBOARD(TextoOriginal)      
+[END]
+[END]
+WHEN '?EliminarOrig'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 5000
+PROPERTY:END
+ Cadena = ',#ORIG('
+  DO EliminarCadena
+  SETCLIPBOARD(TextoOriginal)      
+[END]
+[END]
+WHEN '?EliminarSeq'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 5000
+PROPERTY:END
+ Cadena = ',#SEQ('
+  DO EliminarCadena
+  SETCLIPBOARD(TextoOriginal)
+[END]
+[END]
+[END]
+EMBED %ProcedureRoutines
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 500
+PROPERTY:END
+PreProceso ROUTINE
+    DO AbrirVentanaEsperaAvance
+    TextoTrabajo = CLIP(LEFT(TextoOriginal))
+    LOOP C# = 1 TO LEN(CLIP(LEFT(TextoTrabajo)))
+        Caracter = Sub(TextoTrabajo,C#,1)
+        DO AvanceEspera
+        IF Caracter = '|'
+            Seguimos = 0
+            Concatenar = 0
+            LOOP D# = C#-1 TO 1 BY -1
+                CaracterAnt = SUB(TextoTrabajo,D#,1)
+                IF CaracterAnt = ' ' THEN CYCLE.
+                IF CaracterAnt = '&' 
+                    Concatenar = 1
+                    CYCLE
+                END
+                IF CaracterAnt = '''' AND Concatenar = 1 
+                    D# = D# -1
+                    BREAK
+                END
+                IF CaracterAnt = ',' 
+                    D# = D# + 1
+                    BREAK
+                END
+                Seguimos = 1
+                BREAK
+            END
+            IF Seguimos = 0
+                LOOP E# = C#+1 TO LEN(CLIP(LEFT(TextoTrabajo)))
+                    CaracterPos = SUB(TextoTrabajo,E#,1)
+                    IF CaracterPos = CHR(10) THEN CYCLE.
+                    IF CaracterPos = CHR(13) THEN CYCLE.
+                    IF CaracterPos = CHR(32) THEN CYCLE.
+                    IF Concatenar = 1 AND CaracterPos = '''' THEN CYCLE.
+                    BREAK
+                END
+                !IF Concatenar = 0 THEN E# = E# - 1.
+                !MESSAGE('***'&CLIP(LEFT(SUB(CLIP(LEFT(TextoTrabajo)),1,D#)))&'***|***'& CLIP(LEFT(SUB(TextoTrabajo, E#,LEN(CLIP(LEFT(TextoTrabajo)))))))
+                TextoTrabajo = SUB(CLIP(LEFT(TextoTrabajo)),1,D#) & SUB(TextoTrabajo, E#,LEN(CLIP(LEFT(TextoTrabajo))))
+                C# = 1
+            END
+        END
+    END
+    DO CerrarVentanaEsperaAvance
+    TextoOriginal = TextoTrabajo
+    DISPLAY(TextoOriginal)
+    SETCLIPBOARD(TextoTrabajo)
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 505
+PROPERTY:END
+EliminarCadena ROUTINE
+    DO AbrirVentanaEsperaAvance
+    TextoTrabajo = CLIP(LEFT(TextoOriginal))
+    LOOP C# = 1 TO LEN(CLIP(LEFT(TextoTrabajo)))
+        DO AvanceEspera
+        IF Sub(TextoTrabajo,C#,LEN(CLIP(Cadena))) = CLIP(LEFT(Cadena))
+            LOOP E# = C#+5 TO LEN(CLIP(LEFT(TextoTrabajo)))
+                CaracterPos = SUB(TextoTrabajo,E#,1)
+                IF CaracterPos = ')' THEN BREAK.
+            END
+            TextoTrabajo = SUB(CLIP(LEFT(TextoTrabajo)),1,C#-1) & SUB(TextoTrabajo, E#+1,LEN(CLIP(LEFT(TextoTrabajo))))
+            C# = 1
+        END
+    END
+    DO CerrarVentanaEsperaAvance
+    TextoOriginal = TextoTrabajo
+    DISPLAY(TextoOriginal)
+    SETCLIPBOARD(TextoTrabajo)
+[END]
+[END]
+[ADDITION]
+NAME ABC CloseCurrentWindow
+[INSTANCE]
+INSTANCE 1
+[ADDITION]
+NAME SDigitales SDVentanaAvance
+[INSTANCE]
+INSTANCE 2
+[PROMPTS]
+%PrimerLinea DEFAULT  ('Haciendo Magia')
+%SegundaLinea DEFAULT  ('Aguarde... Procesando...')
+%AvanceEspera DEFAULT  ('20')
+[WINDOW]
+Window  WINDOW('Formateador de Ventanas'),AT(,,610,361),FONT('MS Sans Serif',8,,FONT:regular), |
+          CENTER,ICON('WindowTile.ico'),GRAY
+          TEXT,AT(3,3,603,318),USE(TextoOriginal),FONT('Source Code Pro Semibold',11),VSCROLL, |
+            #ORDINAL(1)
+          BUTTON('&Ok'),AT(487,342,54,14),USE(?OkButton:2),LEFT,ICON('waok.ico'),#ORDINAL(2)
+          BUTTON('&Cancelar'),AT(545,342,54,14),USE(?CancelButton),LEFT,ICON('wacancel.ico'), |
+            #ORDINAL(3)
+          BUTTON('Pre Procesar'),AT(2,342),USE(?PreProceso),#ORDINAL(4)
+          BUTTON('Eliminar Fonts'),AT(63,342,57,14),USE(?EliminarFonts),#ORDINAL(5)
+          BUTTON('Eliminar Orig'),AT(124,342,57,14),USE(?EliminarOrig),#ORDINAL(6)
+          BUTTON('Eliminar Ord.'),AT(185,342,57,14),USE(?EliminarOrdinal),#ORDINAL(7)
+          BUTTON('Eliminar Seq.'),AT(247,342,57,14),USE(?EliminarSeq),#ORDINAL(8)
+        END
+
+[END]
