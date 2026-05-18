@@ -1,0 +1,4 @@
+*.clw linguist-language=Clarion
+*.inc linguist-language=Clarion
+*.app linguist-language=Clarion
+*.dct linguist-language=Clarion
