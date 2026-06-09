@@ -30,12 +30,6 @@ Por cualquier duda, consulta, o sugerencia:
 mail: asantarelli@sdigitales.com.ar
 telegram: @aesantarelli
 
-## ☕ ¿Te fue útil?
-
-Si esta herramienta te ahorró tiempo, podés invitarme un café:
-
-[![Donar con PayPal](https://www.paypalobjects.com/es_ES/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?business=informacion@sdigitales.com.ar)
-
 ## Historia de modificaciones
 v1.0 - 30-01-2021
 Versión Inicial
